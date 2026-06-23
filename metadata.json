@@ -1,0 +1,6 @@
+{
+  "name": "Randomize",
+  "description": "An elegant, fast, and visually appealing episode picker and discovery platform that removes decision fatigue and helps you instantly find standard and community-rated episodes of your favorite TV shows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

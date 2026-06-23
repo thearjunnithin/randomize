@@ -1,0 +1,174 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique user authentication ID"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Public display name"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        }
+      },
+      "required": ["id", "displayName", "email"]
+    },
+    "Favorite": {
+      "title": "Favorite",
+      "description": "A saved favorite episode of a show for a user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique UUID for the favorite"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The user ID who saved it"
+        },
+        "showName": {
+          "type": "string",
+          "description": "The name of the TV show"
+        },
+        "season": {
+          "type": "number",
+          "description": "The season number"
+        },
+        "number": {
+          "type": "number",
+          "description": "The episode number"
+        },
+        "title": {
+          "type": "string",
+          "description": "The episode title"
+        },
+        "image": {
+          "type": "string",
+          "description": "Poster or episode image URL"
+        },
+        "airdate": {
+          "type": "string",
+          "description": "Airing date string"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when favorited"
+        }
+      },
+      "required": ["id", "userId", "showName", "season", "number", "title", "createdAt"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "A user-submitted review and rating for an episode",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique review ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The user ID who submitted the review"
+        },
+        "userDisplayName": {
+          "type": "string",
+          "description": "Display name of the user"
+        },
+        "showName": {
+          "type": "string",
+          "description": "Name of the show"
+        },
+        "season": {
+          "type": "number",
+          "description": "Season number"
+        },
+        "number": {
+          "type": "number",
+          "description": "Episode number"
+        },
+        "rating": {
+          "type": "number",
+          "description": "Rating from 1 to 10"
+        },
+        "comment": {
+          "type": "string",
+          "description": "Written commentary review"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when reviews were saved"
+        }
+      },
+      "required": ["id", "userId", "userDisplayName", "showName", "season", "number", "rating", "comment", "createdAt"]
+    },
+    "CustomShow": {
+      "title": "CustomShow",
+      "description": "A custom show profile added by a user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique custom show ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The user ID who submitted the custom show or 'guest'"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the show"
+        },
+        "seasons": {
+          "type": "number",
+          "description": "Number of seasons"
+        },
+        "episodesPerSeason": {
+          "type": "number",
+          "description": "Episodes per season"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Short synopsis"
+        },
+        "genre": {
+          "type": "string",
+          "description": "Genra category"
+        },
+        "premieredYear": {
+          "type": "string",
+          "description": "Year of premier"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of creation"
+        }
+      },
+      "required": ["id", "userId", "name", "seasons", "episodesPerSeason", "summary", "genre", "premieredYear", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User account documents"
+    },
+    "favorites/{favoriteId}": {
+      "schema": "Favorite",
+      "description": "User favorite episodes"
+    },
+    "reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Community episode reviews"
+    },
+    "custom_shows/{showId}": {
+      "schema": "CustomShow",
+      "description": "Custom show configurations added by users"
+    }
+  }
+}

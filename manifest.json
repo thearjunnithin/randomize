@@ -1,0 +1,24 @@
+{
+  "short_name": "Randomize",
+  "name": "Randomize TV Show Picker",
+  "description": "An elegant, fast, and visually appealing episode picker and discovery platform that removes decision fatigue.",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/neon/192/experimental-tv-neon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://img.icons8.com/neon/512/experimental-tv-neon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0a0c",
+  "theme_color": "#7C5CFC",
+  "display": "standalone",
+  "orientation": "portrait"
+}
